@@ -1,0 +1,36 @@
+{
+  "name": "swapi_mevn",
+  "version": "1.0.0",
+  "description": "Star Wars API using MEVN",
+  "main": "server.js",
+  "scripts": {
+    "devstart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daletom/swapi_mevn.git"
+  },
+  "keywords": [
+    "mongoose",
+    "express",
+    "vue",
+    "node",
+    "star",
+    "wars",
+    "api"
+  ],
+  "author": "Tom Dale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daletom/swapi_mevn/issues"
+  },
+  "homepage": "https://github.com/daletom/swapi_mevn#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.26"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
