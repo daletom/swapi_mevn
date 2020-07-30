@@ -6,6 +6,19 @@ GET http://localhost:3000/swapi/5f211269ea6b87f856100b2e
 
 ###
 
+DELETE http://localhost:3000/swapi/5f223618c6e87b0950ab5a15
+
+###
+
+PATCH http://localhost:3000/swapi/5f223523c6e87b0950ab5a12
+Content-Type: application/json
+
+{
+    "image_url": "https://tom.imgix.net/api/films/3.jpg"
+}
+
+###
+
 POST http://localhost:3000/swapi
 Content-Type: application/json
 
