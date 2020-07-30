@@ -38,11 +38,51 @@ router.post('/', async (req, res) => {
   })
 
 // Update one Star Wars object
-router.patch('/:id', getSwapi, (req, res) => {
+router.patch('/:id', getSwapi, async (req, res) => {
+    if (req.body.title != null) {
+        res.swapi.title = req.body.title
+    }
+
+    if (req.body.episode_id != null) {
+        res.swapi.episode_id = req.body.episode_id
+    }
+
+    if (req.body.opening_crawl != null) {
+        res.swapi.opening_crawl = req.body.opening_crawl
+    }
+
+    if (req.body.director != null) {
+        res.swapi.director = req.body.director
+    }
+
+    if (req.body.producer != null) {
+        res.swapi.producer = req.body.producer
+    }
+
+    if (req.body.release_date != null) {
+        res.swapi.release_date = req.body.release_date
+    }
+
+    if (req.body.image_url != null) {
+        res.swapi.image_url = req.body.image_url
+    }
+    try {
+        const updatedSwapi = await res.swapi.save()
+        res.json(updatedSwapi)
+    } catch {
+        res.status(400).json({ message: err.message })
+    }
+    
 })
 
 // Delete one Star Wars object
-router.delete('/:id', getSwapi, (req, res) => {
+router.delete('/:id', getSwapi, async (req, res) => {
+    try {
+        await res.swapi.remove()
+        res.json({ message: 'Deleted this Star Wars object' })
+    } catch(err) {
+        res.status(500).json({ message: err.message })
+    }
 })
 
 async function getSwapi(req, res, next) {
