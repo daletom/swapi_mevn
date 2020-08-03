@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 
 app.use(cors({origin: 'http://localhost:8081'}));
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+mongoose.connect(process.env.mongolab-fitted-72445, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database'))
@@ -24,4 +24,7 @@ app.use('/swapi', swapiRouter)
     next();
 })*/
 
-app.listen(3000, () => console.log('server started'))
+//app.listen(3000, () => console.log('server started'))
+const port = process.env.PORT || 3000;
+
+app.listenerCount(port);
