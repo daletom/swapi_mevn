@@ -13,8 +13,13 @@ export default new Router({
       component: () => import("./components/SwapisList")
     },
     {
+      path: "/swapis/edit/:id",
+      name: "swapi-edit",
+      component: () => import("./components/SwapiEdit")
+    },
+    {
       path: "/swapis/:id",
-      name: "swapi-details",
+      name: "swapi",
       component: () => import("./components/Swapi")
     },
     {

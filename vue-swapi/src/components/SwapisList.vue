@@ -46,7 +46,12 @@
         </div>
 
         <a class="badge badge-warning"
-          :href="'/swapis/' + currentSwapi.id"
+          :href="'/swapis/' + currentSwapi._id"
+        >
+          View
+        </a>
+        <a class="badge badge-warning"
+          :href="'/swapis/edit/' + currentSwapi._id"
         >
           Edit
         </a>
